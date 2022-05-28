@@ -17,13 +17,16 @@ enum month {
 };
 
 int main() {
-    while (true) {
-        int num = 0;
+    int num = 1;
+
+    while (num != 0) {
         std::cout << "Введите номер месяца: ";
         std::cin >> num;
         month this_month = static_cast<month>(num);
-
         switch (this_month) {
+            case 0:
+                std::cout << "До свидания" << "\n";
+                break;
             case 1:
                 std::cout << "Январь" << "\n";
                 break;
@@ -60,12 +63,10 @@ int main() {
             case 12:
                 std::cout << "Декабрь" << "\n";
                 break;
-            case 0:
-                std::cout << "До свидания" << "\n";
-                return 0;
             default:
                 std::cout << "Неправильный номер!" << "\n";
                 break;
         }
     }
+    return 0;
 }
