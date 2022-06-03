@@ -1,8 +1,7 @@
 #include <iostream>
 
 enum month {
-    null,
-    january,
+    january = 1,
     febrary,
     marach,
     april,
@@ -22,6 +21,10 @@ int main() {
     while (num != 0) {
         std::cout << "Введите номер месяца: ";
         std::cin >> num;
+        if (num < 0 || num > 12) {
+            std::cerr << "Неправильный номер!" << "\n";
+            return 1;
+        }
         month this_month = static_cast<month>(num);
         switch (this_month) {
             case 0:
@@ -62,9 +65,6 @@ int main() {
                 break;
             case 12:
                 std::cout << "Декабрь" << "\n";
-                break;
-            default:
-                std::cout << "Неправильный номер!" << "\n";
                 break;
         }
     }
